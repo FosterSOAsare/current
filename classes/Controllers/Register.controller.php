@@ -15,6 +15,7 @@ class registerController extends Register
     $this->lastname  = $lastname;
     $this->email  = $email;
     $this->pwdRepeat  = $pwdRepeat;
+    $this->timestamp = gmdate("Y-m-d H:i:s");
   }
 
   public function createProfileName($profile)
@@ -25,6 +26,63 @@ class registerController extends Register
     return $name;
   }
 
+  public function validateName()
+  {
+    if (!preg_match("/^[A-Za-z]+$/", $this->firstname) || !preg_match("/^[A-Za-z]+$/", $this->lastname)) {
+      return "Please enter valid name formats";
+    }
+    return true;
+  }
+  public function validateEmail()
+  {
+    if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+      return "Please enter a valid email address";
+    }
+    return true;
+  }
+
+  public function validatePassword()
+  {
+    if (strlen($this->password) < 8) {
+      return "Password is too short ";
+    }
+    if ($this->password != $this->pwdRepeat) {
+      return "Passwords do not match ";
+    }
+    return true;
+  }
+  public function checkEmailAvailability()
+  {
+    return $this->matchUserEmail($this->email);
+  }
+  public function generateRegisterCode()
+  {
+    $num = '1234567890';
+    $code = "";
+    for ($i = 0; $i < 8; $i++) {
+      $code .= $num[rand(0, strlen($num) - 1)];
+    }
+    return $code;
+  }
+
+  function setUser($code)
+  {
+    return $this->insertUser($this->email, $this->firstname, $this->lastname, md5($this->password), $this->timestamp, $code);
+  }
+
+  function fetchUser()
+  {
+    return $this->getUserWithEmail($this->email);
+  }
+
+  public function validateFileUpload()
+  {
+    if (!isset($_FILES['profile'])) {
+      return "Please choose a profile picture  ";
+    }
+    return true;
+  }
+
   public function storeUploadedFile($tmp, $name)
   {
     $path = "C:xampp/htdocs/current/assets/profiles/" . strtolower($name);
@@ -32,9 +90,5 @@ class registerController extends Register
       return true;
     };
     return false;
-  }
-
-  public function compareEmail()
-  {
   }
 }

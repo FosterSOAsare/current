@@ -7,4 +7,4 @@
 RewriteEngine on 
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(register|login|dashboard) $1.php [NC]
+RewriteRule ^(register|login|dashboard|verifications) $1.php [NC]

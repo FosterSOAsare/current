@@ -56,7 +56,9 @@ $(document).ready(() => {
 			contentType: false,
 			success: (data) => {
 				if (data == "success") {
-					window.location.href = "./dashboard";
+					setTimeout(() => {
+						window.location.href = "./verifications?id=email";
+					}, 2000);
 				} else {
 					err.text(data);
 					err.show();
