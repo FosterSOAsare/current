@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+$color1: #cec02b;
 @mixin flex($justify, $align) {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -14,4 +16,5 @@
 	padding: 0;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
 }

@@ -1,5 +1,11 @@
 <?php
-header("Location: ./login");
+if (!isset($loggedInfo)) {
+  header("Location: ./login");
+}
+if (isset($loggedInfo)) {
+  header("Location: ./dashboard");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +19,7 @@ header("Location: ./login");
   <meta http-equiv="Pragma" value='no-cache'>
   <meta http-equiv="Expire" value='0'>
   <title>Trolopee - Index</title>
+  <link rel="stylesheet" href="./assets/css/includes.css">
 </head>
 
 <body>
