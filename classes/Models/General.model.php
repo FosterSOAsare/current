@@ -6,7 +6,10 @@ class General extends Dbh
     $sql = "SELECT user_id, firstname , lastname , email FROM users WHERE cookie = ? ";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$cookie]);
-    $result = $stmt->fetch();
-    return $result;
+    if ($stmt->rowCount() == 1) {
+      $result = $stmt->fetch();
+      return $result;
+    }
+    return false;
   }
 }

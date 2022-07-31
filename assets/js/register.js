@@ -18,7 +18,7 @@ $(document).ready(() => {
 			err.show();
 			return;
 		}
-		if (!profile) {
+		if (profile.name == "") {
 			err.text("Please choose a profile picture");
 			err.show();
 			return;
@@ -33,7 +33,7 @@ $(document).ready(() => {
 			err.show();
 			return;
 		}
-		if (password != confirmPassword) {
+		if (password != passwordRepeat) {
 			err.text("Passwords do not match");
 			err.show();
 			return;
