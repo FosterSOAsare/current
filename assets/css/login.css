@@ -82,6 +82,10 @@ main#login .container #form_section form button {
 main#login .container #form_section form button:focus {
     outline: none;
   }
+  main#login .container #form_section form input:focus {
+    outline: none;
+    border-color: #e9a507;
+  }
   main#login .container #form_section form .err {
     color: rgb(185, 8, 8);
     font-size: 14px;
@@ -125,14 +129,14 @@ main#login .container #form_section form button:focus {
     align-items: flex-start;
   }
   main#login .container .image {
-    height: 700px;
+    height: 550px;
     margin: 0;
   }
   main#login .container .image img {
     border-radius: 0;
   }
   main#login .container #form_section {
-    height: 700px;
+    height: 550px;
     border: none;
   }
   main#login .container #form_section form h3 {

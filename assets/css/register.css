@@ -82,6 +82,10 @@ main#register .container #form_section form button {
 main#register .container #form_section form button:focus {
     outline: none;
   }
+  main#register .container #form_section form input:focus {
+    outline: none;
+    border-color: #e9a507;
+  }
   main#register .container #form_section form .err {
     color: rgb(185, 8, 8);
     font-size: 14px;
@@ -127,7 +131,7 @@ main#register .container #form_section form button:focus {
     align-items: flex-start;
   }
   main#register .container .image {
-    height: 750px;
+    height: 700px;
     margin: 0;
   }
   main#register .container .image img {
@@ -135,7 +139,7 @@ main#register .container #form_section form button:focus {
     border-radius: 10px 0 0 10px;
   }
   main#register .container #form_section {
-    height: 750px;
+    height: 700px;
     padding: 20px;
     border: none;
     border-radius: 0 10px 10px 0;
@@ -149,11 +153,10 @@ main#register .container #form_section form button:focus {
   }
   main#register .container #form_section form .logo {
     display: block;
-    margin-bottom: 30px;
   }
   main#register .container #form_section form input,
 main#register .container #form_section form button {
-    height: 50px;
+    height: 45px;
     margin-bottom: 20px;
     font-size: 16px;
   }

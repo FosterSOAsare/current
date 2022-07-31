@@ -22,4 +22,15 @@ class Login extends Dbh
     }
     return false;
   }
+
+  protected function getEmailStatus($email)
+  {
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $this->connect()->prepare($sql);
+    $exec = $stmt->execute([$email]);
+    if ($exec) {
+      return $stmt->fetch()['status'];
+    }
+    return false;
+  }
 }

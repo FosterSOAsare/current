@@ -51,10 +51,6 @@ class registerController extends Register
     }
     return true;
   }
-  public function checkEmailAvailability()
-  {
-    return $this->matchUserEmail($this->email);
-  }
   public function generateRegisterCode()
   {
     $num = '1234567890';
@@ -70,10 +66,6 @@ class registerController extends Register
     return $this->insertUser($this->email, $this->firstname, $this->lastname, md5($this->password), $this->timestamp, $code);
   }
 
-  function fetchUser()
-  {
-    return $this->getUserWithEmail($this->email);
-  }
 
   public function validateFileUpload()
   {
@@ -90,5 +82,15 @@ class registerController extends Register
       return true;
     };
     return false;
+  }
+
+  public function setEmailStatus()
+  {
+    return $this->updateEmailStatus($this->email);
+  }
+
+  public function setEmailConfirmationCode($code)
+  {
+    return $this->updateEmailConfimationCode($this->email, $code);
   }
 }

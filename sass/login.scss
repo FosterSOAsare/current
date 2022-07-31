@@ -66,6 +66,12 @@
 							outline: none;
 						}
 					}
+					input {
+						&:focus {
+							outline: none;
+							border-color: $color1;
+						}
+					}
 					.err {
 						color: $color2;
 						font-size: 14px;
@@ -104,14 +110,14 @@
 			margin-top: 40px;
 			@include flex(space-between, flex-start);
 			.image {
-				height: 700px;
+				height: 550px;
 				margin: 0;
 				img {
 					border-radius: 0;
 				}
 			}
 			#form_section {
-				height: 700px;
+				height: 550px;
 				border: none;
 				form {
 					h3 {

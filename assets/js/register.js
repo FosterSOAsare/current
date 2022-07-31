@@ -57,6 +57,7 @@ $(document).ready(() => {
 			success: (data) => {
 				if (data == "success") {
 					setTimeout(() => {
+						localStorage.removeItem("emailVerificationTime");
 						window.location.href = "./verifications?id=email";
 					}, 2000);
 				} else {

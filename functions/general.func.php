@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "./classes/Dbh.class.php";
 require "./classes/Models/General.model.php";
 require "./classes/Controllers/General.controller.php";

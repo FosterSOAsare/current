@@ -31,6 +31,8 @@ $(document).ready(() => {
 			success: (data) => {
 				if (data == "success") {
 					window.location.href = "./dashboard";
+				} else if (data == "verify") {
+					window.location.href = "./verifications?id=email";
 				} else {
 					err.text(data);
 					err.show();

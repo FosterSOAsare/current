@@ -66,6 +66,12 @@
 							outline: none;
 						}
 					}
+					input {
+						&:focus {
+							outline: none;
+							border-color: $color1;
+						}
+					}
 					.err {
 						color: $color2;
 						font-size: 14px;
@@ -106,7 +112,7 @@
 			margin-top: 40px;
 			@include flex(space-between, flex-start);
 			.image {
-				height: 750px;
+				height: 700px;
 				margin: 0;
 				img {
 					border-radius: 0;
@@ -114,7 +120,7 @@
 				}
 			}
 			#form_section {
-				height: 750px;
+				height: 700px;
 				padding: 20px;
 				border: none;
 				border-radius: 0 10px 10px 0;
@@ -128,11 +134,11 @@
 					}
 					.logo {
 						display: block;
-						margin-bottom: 30px;
+						// margin-bottom: 20px;
 					}
 					input,
 					button {
-						height: 50px;
+						height: 45px;
 						margin-bottom: 20px;
 						font-size: 16px;
 					}

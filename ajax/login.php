@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "../classes/Dbh.class.php";
 require "../classes/Models/Login.model.php";
 require "../classes/Controllers/Login.controller.php";
@@ -13,12 +14,19 @@ if (isset($_POST['password']) && isset($_POST['email'])) {
 
   if ($logControl->validateEmail()) {
     if ($logView->fetchMatchStatus()) {
+      // Check email Status
+      $status = $logView->fetchEmailStatus();
       // Set new cookie 
-      $cookie = $logControl->setCookie();
-      if ($cookie) {
-        $cookiename = md5('current');
-        setcookie($cookiename, $logControl->cookie, time() + (3600 * 24 * 30), "/");
-        echo "success";
+      if ($status) {
+        $cookie = $logControl->setCookie();
+        if ($cookie) {
+          $cookiename = md5('current');
+          setcookie($cookiename, $logControl->cookie, time() + (3600 * 24 * 30), "/");
+          echo "success";
+        }
+      } else {
+        $_SESSION['email'] = $email;
+        echo "verify";
       }
     } else {
       echo "Invalid login credentials";
