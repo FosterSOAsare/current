@@ -2,12 +2,13 @@
 	header {
 		width: 100%;
 		height: 100px;
+		background-color: white;
+		position: fixed;
 		@include flex(space-between, center);
 		padding: 0 10px;
 		.logo {
-			width: 200px;
+			width: 170px;
 			height: 70%;
-			background-color: yellow;
 			img {
 				width: 100%;
 				height: 100%;
@@ -21,10 +22,32 @@
 				width: 45px;
 				border-radius: 3px;
 				height: 40px;
-				background-color: red;
+				background-color: $color1;
 				border: none;
 			}
 			.desktop {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1240px) {
+	header {
+		width: 100%;
+		max-width: 1440px;
+		margin: 0 auto;
+		.right_section {
+			width: 45%;
+			.desktop {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				width: 100%;
+				height: 60%;
+				background-color: $color1;
+			}
+			.menu_btn {
 				display: none;
 			}
 		}

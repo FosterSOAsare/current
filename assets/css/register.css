@@ -13,34 +13,34 @@ body {
 }
 
 @media screen and (min-width: 0px) {
-  main#login {
+  main#register {
     padding-top: 30px;
     width: 100%;
     height: 90vh;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   }
-  main#login h3 {
+  main#register h3 {
     text-align: center;
     font-weight: bold;
     font-size: 26px;
   }
-  main#login .container {
+  main#register .container {
     width: 100%;
     height: auto;
     padding: 0 10px;
   }
-  main#login .container .image {
+  main#register .container .image {
     margin-top: 20px;
     width: 100%;
     height: 300px;
     overflow: hidden;
   }
-  main#login .container .image img {
+  main#register .container .image img {
     width: 100%;
     border-radius: 6px 6px 0 0;
     height: 100%;
   }
-  main#login .container #form_section {
+  main#register .container #form_section {
     width: 100%;
     height: auto;
     padding-top: 20px;
@@ -49,12 +49,12 @@ body {
     -webkit-box-shadow: -1px 1px 8px rgb(175, 171, 171);
     box-shadow: -1px 1px 8px rgb(175, 171, 171);
   }
-  main#login .container #form_section form {
+  main#register .container #form_section form {
     width: 100%;
     height: auto;
     padding-bottom: 50px;
   }
-  main#login .container #form_section form h3 {
+  main#register .container #form_section form h3 {
     text-align: left;
     font-size: 20px;
     font-weight: normal;
@@ -62,11 +62,11 @@ body {
     padding-left: 10px;
     margin-bottom: 30px;
   }
-  main#login .container #form_section form .logo {
+  main#register .container #form_section form .logo {
     display: none;
   }
-  main#login .container #form_section form input,
-main#login .container #form_section form button {
+  main#register .container #form_section form input,
+main#register .container #form_section form button {
     display: block;
     height: 45px;
     width: 90%;
@@ -78,11 +78,11 @@ main#login .container #form_section form button {
     font-size: 14px;
     font-weight: bold;
   }
-  main#login .container #form_section form input:focus,
-main#login .container #form_section form button:focus {
+  main#register .container #form_section form input:focus,
+main#register .container #form_section form button:focus {
     outline: none;
   }
-  main#login .container #form_section form .err {
+  main#register .container #form_section form .err {
     color: rgb(185, 8, 8);
     font-size: 14px;
     margin-top: -13px;
@@ -90,28 +90,30 @@ main#login .container #form_section form button:focus {
     margin-bottom: 10px;
     padding-left: 21px;
   }
-  main#login .container #form_section form button {
+  main#register .container #form_section form button {
     background-color: #e9a507;
     color: white;
     border: none;
   }
-  main#login .container #form_section form p {
+  main#register .container #form_section form p {
     margin-top: 20px;
     padding-left: 20px;
     font-weight: bold;
   }
-  main#login .container #form_section form p a {
+  main#register .container #form_section form p a {
     color: #e9a507;
   }
 }
 @media screen and (min-width: 1240px) {
-  main#login {
-    width: 100%;
+  main#register {
     padding-top: 130px;
+    width: 100%;
     max-width: 1040px;
+    height: auto;
+    padding-bottom: 50px;
     margin: 0 auto;
   }
-  main#login .container {
+  main#register .container {
     width: 100%;
     margin-top: 40px;
     display: -webkit-box;
@@ -124,29 +126,38 @@ main#login .container #form_section form button:focus {
     -ms-flex-align: flex-start;
     align-items: flex-start;
   }
-  main#login .container .image {
-    height: 700px;
+  main#register .container .image {
+    height: 750px;
     margin: 0;
   }
-  main#login .container .image img {
+  main#register .container .image img {
     border-radius: 0;
+    border-radius: 10px 0 0 10px;
   }
-  main#login .container #form_section {
-    height: 700px;
+  main#register .container #form_section {
+    height: 750px;
+    padding: 20px;
     border: none;
+    border-radius: 0 10px 10px 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
-  main#login .container #form_section form h3 {
-    margin-bottom: 50px;
+  main#register .container #form_section form h3 {
+    margin-bottom: 20px;
+    margin-top: 20px;
     display: none;
   }
-  main#login .container #form_section form .logo {
+  main#register .container #form_section form .logo {
     display: block;
     margin-bottom: 30px;
   }
-  main#login .container #form_section form input,
-main#login .container #form_section form button {
+  main#register .container #form_section form input,
+main#register .container #form_section form button {
     height: 50px;
     margin-bottom: 20px;
     font-size: 16px;
+  }
+  main#register .container #form_section form input[type=file] {
+    border: none;
   }
 }
